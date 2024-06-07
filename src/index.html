@@ -5,25 +5,18 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery</title>
+  <title>HW12</title>
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
 
 <body>
-  <div class="container">
-    <form id="search-form">
-      <input type="text" name="searchQuery" placeholder="Search for images..." />
-      <button class="btn-search" type="submit">Search</button>
-    </form>
-  </div>
-  <div class="gallery"></div>
-
-  <div class="div-loader hidden">
-    <span class="loader"></span>
-  </div>
-  <div class="div-btn-more">
-    <button class="load-more hidden">Load more</button>
-  </div>
+  <form class="form">
+    <input type="text" name="query" placeholder="Search images...">
+    <button class="button" type="submit">Search</button>
+  </form>
+  <ul class="gallery"></ul>
+  <button class="btn-load-more hidden" type="button">Load more</button>
+  <div class="loader"></div>
   <script type="module" src="./main.js"></script>
 </body>
 
