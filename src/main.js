@@ -57,7 +57,11 @@ async function handleSubmit(event) {
             const markup = imgTemplate(data.hits);
             gallery.innerHTML = markup;
             lightbox.refresh();
-            showBtnLoadMore();
+            if (data.hits.length < 15) {
+              hideLoader();
+            } else {
+              showBtnLoadMore();
+            }
         }
     }
    
@@ -78,8 +82,9 @@ async function onLoadMore() {
    
     try {
         const data = await searchImg(query, page);
-        
-        if ( 15 * data.hits.length >= data.totalHits) {
+        const lastPage = Math.ceil(data.totalHits / 15);
+
+        if (lastPage.data.length === 0) {
            hideBtnLoadMore();
             noMoreImg();
         }
@@ -99,8 +104,6 @@ async function onLoadMore() {
         hideLoader();
     }
 };
-
-// Helper functions
 
 function showLoader() {
     loader.style.display = "block";
