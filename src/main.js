@@ -84,7 +84,7 @@ async function onLoadMore() {
         const data = await searchImg(query, page);
         const lastPage = Math.ceil(data.totalHits / 15);
 
-        if (lastPage.data.length === 0) {
+        if (page === lastPage) {
            hideBtnLoadMore();
             noMoreImg();
         }
